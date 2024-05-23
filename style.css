@@ -20,32 +20,4 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-<H2>Robin Basman</H2>
-  <model-viewer 
-                id="model-viewer"
-                src="SPOON.glb"
-                ios-src="SPOON.usdz"
-                alt="spoon"
-                ar
-                ar-modes="webxr scene-viewer quick-look" 
-                environment-image="neutral" 
-                auto-rotate
-                camera-controls
-                animation-name="CubeAction" 
-                animation-loop>  
-  </model-viewer>
 
-  <model-viewer 
-                id="model-viewer"
-                src="SPOON.glb"
-                ios-src="SPOON.usdz"
-                alt="Robin Basman"
-                ar
-                ar-modes="webxr scene-viewer quick-look" 
-                environment-image="neutral" 
-                auto-rotate
-                camera-controls
-                animation-name="CubeAction" 
-                animation-loop>  
-  </model-viewer>
-  
