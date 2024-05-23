@@ -24,14 +24,17 @@
             width: 45vh; /* 100% of the parent's width */
             height: 45vh; /* 80% of the viewport height */
             display: block;
-            margin-left: 55%;
+            position: relative;
+            top: 500px;
+            left: 500px;
+            
             
         }
     </style>
   </head>
   <body>
 <H2>Robin Basman</H2>
- <div> 
+ 
   <model-viewer 
                 id="model-viewer"
                 src="SPOON.glb"
@@ -45,7 +48,7 @@
                 animation-name="CubeAction" 
                 animation-loop>  
     </model-viewer>
-  </div>
+    
 
   
   <!--<img class="img-spoon" src="img/spoon4.png" alt="spoon">-->
