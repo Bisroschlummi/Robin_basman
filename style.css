@@ -10,10 +10,9 @@
 }
 
 .img-spoon {
-    width: 300px;
-    height: 300px;
+    width:500px;
+    height: 500px;
     background-image: url(img/spoon4.png);
    background-size: 100%;
    background-repeat: no-repeat;
-   background-position: 50%;
 }
