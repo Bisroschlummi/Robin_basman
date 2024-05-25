@@ -6,17 +6,20 @@ body {
     
 .img-website {
     
-    width: 1500px;
-    height: 5000px;
+    width: 1000px;
+    height: 1400px;
     background-image: url(img/website_layout.png);
 
     background-position: top;
     background-size: 100%;
-   background-repeat: repeat-y;
-   margin-left: 200px;
+   background-repeat: no-repeat;
+   padding-left: 15%;
+   margin-left: 300px;
+   margin-top: -500px;
    
 
 }
+
 
 
 body {
@@ -27,3 +30,6 @@ body {
 }
 
 
+.img-spoon {
+    background-image: url(img/spoon4.png);
+}
