@@ -1,109 +1,59 @@
-
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robin Basman</title>
+    <title>Switchable AR Model Viewer</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-     <style>
-
-        h2{
-          font-size: 80px;
-          color:aliceblue;
-          text-align: center;
-      
-        
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
         }
-
-     
-      
+        #model-viewer-container {
+            width: 100%;
+            max-width: 600px;
+        }
         model-viewer {
-            width: 65vh; /* 100% of the parent's width */
-            height: 65vh; /* 80% of the viewport height */
-            display: block;
-            position: relative;
-            top: 840px;
-            left: 940px;
-            
-            
+            width: 100%;
+            height: 500px;
+        }
+        .model-buttons {
+            margin-top: 20px;
+        }
+        .model-buttons button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
         }
     </style>
-  </head>
-  <body>
-<H2>Robin Basman</H2>
- 
-  <div class="slider">
-    <div class="img-box">
-      |<img src="models/character.glb" alt="" class="slider-img" />
+</head>
+<body>
+    <h1>Switchable AR Model Viewer</h1>
+    <div id="model-viewer-container">
+        <model-viewer id="ar-model" src="model1.glb" alt="3D model" ar ar-modes="webxr scene-viewer quick-look" camera-controls auto-rotate></model-viewer>
+    </div>
+    <div class="model-buttons">
+        <button onclick="switchModel('model1.glb')">Model 1</button>
+        <button onclick="switchModel('model2.glb')">Model 2</button>
+        <button onclick="switchModel('model3.glb')">Model 3</button>
+        <button onclick="switchModel('model4.glb')">Model 4</button>
+        <button onclick="switchModel('model5.glb')">Model 5</button>
+        <button onclick="switchModel('model6.glb')">Model 6</button>
+        <button onclick="switchModel('model7.glb')">Model 7</button>
+        <button onclick="switchModel('model8.glb')">Model 8</button>
+        <button onclick="switchModel('model9.glb')">Model 9</button>
     </div>
 
-
-    <button class="btn" onclick="prev()">prev</button>
-    <button class="btn" onclick="next()">next</button>
-  </div>
-  
-  <model-viewer 
-                id="model-viewer"
-                src="SPOON.glb"
-                ios-src="SPOON.usdz"
-                alt="spoon"
-                ar
-                ar-modes="webxr scene-viewer quick-look" 
-                environment-image="neutral" 
-                auto-rotate
-                camera-controls
-                animation-name="CubeAction" 
-                animation-loop>  
-    </model-viewer>
-    
-
-  
-  <!--<img class="img-spoon" src="img/spoon4.png" alt="spoon">-->
- 
-  <div class="img-spoon"></div>
-
-  <!--<img class="img-website" src="img/website_layout" alt="website">-->
- 
-  <div class="img-website"></div>
-
- 
-
- <script>
-
-    var slider_img = document.querySelector('.slider-img');
-    var images = ['character.glb', 'choker.glb', 'LAMP.glb', 'plug.glb', 'pluto.glb', 'spaceship.glb', 'STATION.glb', 'turm.glb'];
-    var i = 0;
-
-    function pre(){
-      if(i <= 0 ) i = images.lenght;
-      i--;
-      return setImg();
-
-    }
-
-    function next(){
-      
-    }
-
-    function setImg(){
-      return slider_img.setAttribute('src','images/' + images[i]);
-    }
-
-
-        async function checkARCoreCompatibility() {
-            const modelViewer = document.getElementById('model-viewer');
-            const isARCoreSupported = await navigator.xr.isSessionSupported('immersive-ar');
-            if (!isARCoreSupported) {
-                modelViewer.removeAttribute('ar');
-                modelViewer.removeAttribute('ar-modes');
-                alert('Your device is not compatible with AR features. You can still view the 3D model.');
-            }
+    <script>
+        function switchModel(modelUrl) {
+            const modelViewer = document.getElementById('ar-model');
+            modelViewer.src = modelUrl;
         }
-
-        document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);
     </script>
-   </body>
+</body>
 </html>
