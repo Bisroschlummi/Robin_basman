@@ -11,7 +11,6 @@
             color: aliceblue;
             display: flex;
             flex-direction: column;
-            align-items: center;
             margin: 0;
             padding: 20px;
             background-color: #eeaafc;
@@ -21,8 +20,9 @@
             background-repeat: no-repeat
         }
         #model-viewer-container {
+    
             width: 100%;
-            max-width: 600px;
+            max-width: 700px;
         }
         model-viewer {
             width: 100%;
@@ -32,10 +32,12 @@
         .model-buttons {
             margin-top: 20px;
         }
-        .model-buttons button {
+        .model-buttons img {
             margin: 0 10px;
             padding: 10px 20px;
+            padding-left: 47%;
             font-size: 16px;
+            cursor: pointer;
            
         }
      
@@ -48,8 +50,8 @@
         <model-viewer id="ar-model" src="model1.glb" alt="3D model" ar ar-modes="webxr scene-viewer quick-look" camera-controls auto-rotate></model-viewer>
     </div>
     <div class="model-buttons">
-        <button onclick="previousModel()">Previous</button>
-        <button onclick="nextModel()">Next</button>
+        <img src="img/button_left-export.png" alt="Previous" onclick="previousModel()">
+        <img src="img/button_right-export.png" alt="Next" onclick="nextModel()">
     </div>
 
     <script>
