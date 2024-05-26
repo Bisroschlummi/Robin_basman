@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Switchable AR Model Viewer</title>
+    <title>Robin Basman</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
         body {
@@ -15,6 +15,10 @@
             margin: 0;
             padding: 20px;
             background-color: #eeaafc;
+            background-image: url(img/website_layout.png);
+            background-position-x: center;
+            background-size: 50%;
+            background-repeat: no-repeat
         }
         #model-viewer-container {
             width: 100%;
@@ -34,10 +38,12 @@
             font-size: 16px;
            
         }
+     
+        
     </style>
 </head>
 <body>
-    <h1>Switchable AR Model Viewer</h1>
+    <h1>Robins Blender Spaß</h1>
     <div id="model-viewer-container">
         <model-viewer id="ar-model" src="model1.glb" alt="3D model" ar ar-modes="webxr scene-viewer quick-look" camera-controls auto-rotate></model-viewer>
     </div>
