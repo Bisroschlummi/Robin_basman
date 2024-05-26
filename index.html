@@ -19,7 +19,7 @@
         }
 
      
-        
+      
         model-viewer {
             width: 65vh; /* 100% of the parent's width */
             height: 65vh; /* 80% of the viewport height */
@@ -35,6 +35,16 @@
   <body>
 <H2>Robin Basman</H2>
  
+  <div class="slider">
+    <div class="img-box">
+      |<img src="models/character.glb" alt="" class="slider-img" />
+    </div>
+
+
+    <button class="btn" onclick="prev()">prev</button>
+    <button class="btn" onclick="next()">next</button>
+  </div>
+  
   <model-viewer 
                 id="model-viewer"
                 src="SPOON.glb"
@@ -59,7 +69,30 @@
  
   <div class="img-website"></div>
 
+ 
+
  <script>
+
+    var slider_img = document.querySelector('.slider-img');
+    var images = ['character.glb', 'choker.glb', 'LAMP.glb', 'plug.glb', 'pluto.glb', 'spaceship.glb', 'STATION.glb', 'turm.glb'];
+    var i = 0;
+
+    function pre(){
+      if(i <= 0 ) i = images.lenght;
+      i--;
+      return setImg();
+
+    }
+
+    function next(){
+      
+    }
+
+    function setImg(){
+      return slider_img.setAttribute('src','images/' + images[i]);
+    }
+
+
         async function checkARCoreCompatibility() {
             const modelViewer = document.getElementById('model-viewer');
             const isARCoreSupported = await navigator.xr.isSessionSupported('immersive-ar');

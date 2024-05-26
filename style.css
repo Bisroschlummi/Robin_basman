@@ -20,7 +20,14 @@ body {
 
 }
 
+.slider {
+ margin: 50px;
+ width: 50%;   
+}
 
+.img-box img {
+    width: 100%;
+}
 
 body {
     background: rgb(161, 122, 206);
