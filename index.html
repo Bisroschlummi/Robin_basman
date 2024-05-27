@@ -51,6 +51,11 @@
             width: 100%;
             align-self: right, bottom;
         }
+        .cloud2 {
+            visibility: collapse;
+            width: 100%;
+            align-self: left, bottom;
+        }
         @media (max-width: 600px) {
 
             .model-buttons {
@@ -68,7 +73,7 @@
                 height: 45vh;
                 position: center;
                 padding-top: 0px;
-                background-color: #bebdfc;
+                background-color: #696a6a;
                 background-image: url(img/mobile-layout.png);
                 background-repeat: no-repeat;
                 background-size: contain;
@@ -81,7 +86,13 @@
             visibility: visible;
             align-self: right, bottom;
         }
-            
+        .cloud2 {
+            width: 100%;
+            margin-top: -400px;
+            margin-left: -50px;
+            visibility: visible;
+            align-self: left, bottom;
+        }    
         }
     </style>
 </head>
@@ -94,6 +105,7 @@
         <img src="img/button_right-export.png" alt="Next" onclick="nextModel()">
     </div>
     <img class="cloud" src="img/cloud.png" alt="Additional Image">
+    <img class="cloud2" src="img/cloud2.png" alt="Additional Image">
 
     <script>
         const models = ['model1.glb', 'model2.glb', 'model3.glb','model4.glb', 'model5.glb', 'model6.glb','model7.glb', 'model8.glb', 'model9.glb', 'model10.glb'];
