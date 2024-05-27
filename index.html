@@ -24,6 +24,7 @@
             width: 100%;
             max-width: 700px;
             margin-left: 50%;
+            display: flex;
         }
         model-viewer {
             width: 400px;
@@ -36,6 +37,7 @@
         .model-buttons {
             margin-top: 100px;
             margin-left: 380px;
+            display: flex;
         }
         .model-buttons img {
             margin: 0 10px;
@@ -44,8 +46,24 @@
             cursor: pointer;
            
         }
-     
-        
+
+        @media (max-width: 600px) {
+
+            .model-buttons {
+                margin-top: 0px;
+                margin-left: 0px;
+                
+            }
+            .model-buttons img {
+                width: 40px;
+                height: 40px;
+            }
+
+            model-viewer {
+                align-items: center;
+                height: 50vh;
+            }
+        }
     </style>
 </head>
 <body>
@@ -58,7 +76,7 @@
     </div>
 
     <script>
-        const models = ['model1.glb', 'model2.glb', 'model3.glb','model4.glb', 'model5.glb', 'model6.glb','model7.glb', 'model8.glb', 'model9.glb'];
+        const models = ['model1.glb', 'model2.glb', 'model3.glb','model4.glb', 'model5.glb', 'model6.glb','model7.glb', 'model8.glb', 'model9.glb', 'model10.glb'];
         let currentModelIndex = 0;
 
         function updateModelViewer() {
