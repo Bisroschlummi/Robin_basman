@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robin Basman</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Press Start 2P', sans-serif;
             color: aliceblue;
             display: flex;
             flex-direction: column;
@@ -56,6 +57,8 @@
             width: 100%;
             align-self: left, bottom;
         }
+
+        
         @media (max-width: 600px) {
 
             .model-buttons {
@@ -106,7 +109,11 @@
     </div>
     <img class="cloud" src="img/cloud.png" alt="Additional Image">
     <img class="cloud2" src="img/cloud2.png" alt="Additional Image">
-
+    
+    <div id="image-viever-container">
+        <image-viewer id="image" src="img/model1.png" alt="image"></image-viewer>
+    </div>
+    <h6><img src="img/insta.png" alt="">instagram: <a href="https://www.instagram.com/bisroschlummi/" target="_blank">@bisroschlummi</a></h6>
     <script>
         const models = ['model1.glb', 'model2.glb', 'model3.glb','model4.glb', 'model5.glb', 'model6.glb','model7.glb', 'model8.glb', 'model9.glb', 'model10.glb'];
         let currentModelIndex = 0;
@@ -133,6 +140,27 @@
                 console.error('Error loading model:', event);
             });
         });
+
+        
+        const images = ['model1.png', 'model2.png', 'model3.png','model4.png', 'model5.png', 'model6.png','model7.png', 'model8.png', 'model9.png', 'model10.png'];
+        let currentimgesIndex = 0;
+
+        function updateimageViewer() {
+            const imageViewer = document.getElementById('image');
+            imageViewer.src = images[currentimageIndex];
+            console.log(`Switched to image: ${images[currentimageIndex]}`);
+        }
+
+        function nextimage() {
+            currentimageIndex = (currentMimageIndex + 1) % images.length;
+            updateimageViewer();
+        }
+
+        function previousimage() {
+            currentimageIndex = (currentimageIndex - 1 + images.length) % images.length;
+            updateimageViewer();
+        }
+
     </script>
 </body>
 </html>
